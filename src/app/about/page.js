@@ -15,7 +15,7 @@ const About = () => {
                 <div className="w-11/12 mx-auto px-4 text-center relative z-10">
                     <div className="flex justify-center items-center">
                         <Canvas
-                            text={'https://www.real-madrid.vercel.app'}
+                            text={'https://www.real-madrid-erfan-arezi.vercel.app'}
                             options={{
                                 errorCorrectionLevel: 'H',
                                 width: 300
