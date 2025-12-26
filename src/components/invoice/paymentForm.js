@@ -1,3 +1,5 @@
+'use client';
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { MdPayment } from "react-icons/md";
 import { RiLoader2Fill } from "react-icons/ri";
@@ -11,7 +13,10 @@ const RegExps = {
     address: /^[A-Za-z0-9\s,.-]{5,100}$/
 };
 
-const PaymentForm = ({ totalAmount, setIsSuccess }) => {
+const PaymentForm = ({ setIsSuccess }) => {
+    const searchParams = useSearchParams();
+    const price = searchParams.get('price') || 0;
+    const totalAmount = parseFloat(price) + 5.99;
     const [isProcessing, setIsProcessing] = useState(false);
     const [formData, setFormData] = useState({
         cardNumber: '',

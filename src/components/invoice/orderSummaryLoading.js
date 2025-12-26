@@ -1,12 +1,6 @@
-'use client';
-import { useSearchParams } from "next/navigation";
 import { AiOutlineShopping } from "react-icons/ai";
 
-const OrderSummary = () => {
-    const searchParams = useSearchParams();
-    const productName = searchParams.get('productName') || '';
-    const price = searchParams.get('price') || 0;
-    const totalAmount = parseFloat(price) + 5.99;
+const OrderSummaryLoading = () => {
     return (
         <>
             <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
@@ -20,8 +14,8 @@ const OrderSummary = () => {
 
                 <div className="space-y-3">
                     <div className="flex justify-between">
-                        <span className="text-gray-600">{productName}</span>
-                        <span className="font-semibold">${price}</span>
+                        <div className="h-5 w-40 rounded-full bg-gray-400 animate-pulse"></div>
+                        <div className="h-5 w-40 rounded-full bg-gray-400 animate-pulse"></div>
                     </div>
 
                     <div className="flex justify-between">
@@ -32,7 +26,7 @@ const OrderSummary = () => {
                     <div className="border-t pt-3 mt-3">
                         <div className="flex justify-between text-lg font-bold">
                             <span>Total</span>
-                            <span className="text-gray-800">${totalAmount.toFixed(2)}</span>
+                            <div className="h-5 w-40 rounded-full bg-gray-400 animate-pulse"></div>
                         </div>
                     </div>
                 </div>
@@ -41,4 +35,4 @@ const OrderSummary = () => {
     )
 }
 
-export default OrderSummary;
+export default OrderSummaryLoading;
